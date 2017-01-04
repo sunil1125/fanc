@@ -1,0 +1,13 @@
+<project name= "gtz" default="compilation" basedir=".">
+<echo message= "running a app"/>
+<target name="compilation">
+<mkdir dir="classes"/>
+<javac srcdir="src" destdir="classes"/>
+</target>
+<target name ="create_jar" depends="compilation">
+<jar basedir="classes" destfile="create_jar.db"/>
+</target>
+<target name="deploy" depends="create_jar">
+<copy file="create_jar.db" todir="code deploy"/>
+</target>
+</project>
