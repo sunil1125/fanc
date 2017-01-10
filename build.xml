@@ -10,4 +10,8 @@
 <target name="deploy" depends="create_jar">
 <copy file="create_jar.db" todir="code deploy"/>
 </target>
+<target name="delete" depends="deploy">
+<delete dir="classes"/>
+<delete file="create_jar"/>
+</target>
 </project>
